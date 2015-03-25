@@ -111,7 +111,7 @@ func Shard(config Config) Config {
 	// Now the secondary donors donate to the recipients.
 	currSecondaryDonor := 0
 
-	for currRecipient < len(recipients) {
+	for currSecondaryDonor < len(secondaryDonors) && currRecipient < len(recipients) {
 		donor = secondaryDonors[currSecondaryDonor]
 		recipient = recipients[currRecipient]
 		numExcess = len(shardsForGid[donor]) - min
