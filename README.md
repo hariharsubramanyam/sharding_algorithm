@@ -10,7 +10,7 @@ implement a sharding algorithm. I've decided to make it a separate repo because:
 
 ## Background
 
-Our hashtable must store a set of key-value pairs. The key value pairs may not all fit on a single
+A hashtable must store a set of key-value pairs. The key value pairs may not all fit on a single
 server, so we split the key value pairs into **shards**, spread the shards over a set of servers.
 
 Since a server can be a single point of failure, we need some fault tolerance. One way to achieve
@@ -229,3 +229,7 @@ In both cases, the shards are balanced.
 
 I'm getting sleepy and I'm not exactly sure how to approach this proof right now :) I may come 
 back to it at a later date. But until then, it might be fun to leave it as an exercise to the reader. ;)
+
+You may find it handy to use the following property:
+
+**After a group receives a shard, it never donates a shard**
